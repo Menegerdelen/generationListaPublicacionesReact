@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+# Desafío: Lista de Publicaciones con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requerimientos
 
-Currently, two official plugins are available:
+### 1. Creación del proyecto
+- Crear un nuevo proyecto con **Vite + React**
+- Verificar que el proyecto arranca correctamente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. Estructura de componentes
+- Crear al menos dos componentes:
+  - **App.jsx**: componente principal
+  - **PostsList.jsx**: mostrará la lista de publicaciones obtenidas desde la API
 
-## React Compiler
+### 3. Manejo de estado (`useState`)
+- En `PostsList.jsx`, definir un estado llamado `posts` que almacenará las publicaciones
+- Inicializarlo como un arreglo vacío
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 4. Efectos (`useEffect`) y consumo de API
+- Usar `useEffect` para hacer una petición a la API al montar el componente
+- Endpoint: `https://jsonplaceholder.typicode.com/posts`
+- Guardar los datos en el estado `posts`
 
-## Expanding the ESLint configuration
+### 5. Renderización de datos
+- Mostrar en la interfaz los títulos y cuerpos (`title` y `body`) de cada publicación
+- Usar una lista `<ul>` con `<li>` o tarjetas con `<div>`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 6. Extras opcionales
+- Agregar un **loading** mientras los datos se cargan
+- Agregar un **mensaje de error** si la petición falla
+- Limitar la lista a las primeras 10 publicaciones
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Entrega
+- Crear un repositorio en **GitHub** con la solución
+- Compartir el link del repositorio como entrega final
