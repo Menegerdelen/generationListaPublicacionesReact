@@ -44,8 +44,8 @@ export const PostList = () => {
                 <h1 className="fw-bold">Listado de publicaciones</h1>
             </div>
             <div className="row justify-content-center my-5">
-                {/* Quitar el ".splice(1,10)" para mostrar todos los posts sin limite */}
-                { posts.splice(1, 10).map(( post ) => (
+                {/* Quitar el ".splice(0,10)" para mostrar todos los posts sin limite */}
+                { posts.splice(0, 10).map(( post ) => (
                     <div className="col-8 col-md-8 col-lg-8 col-xl-3 m-3" key={ post.id }>
                         <div className="card">
                             <div className="card-body">
